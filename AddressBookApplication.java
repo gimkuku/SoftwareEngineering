@@ -1,4 +1,10 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Scanner;
 
 public class AddressBookApplication {
 	
@@ -8,8 +14,16 @@ public class AddressBookApplication {
 	AddressBookApplication(){
 		initAddressbookExcercise(ab)
 	}*/
-    
+    String filename = null;
+	void init(String filename) {
+		this.filename = filename;
+	}
+	
 	public static void main(String args[]) {
+		
+		
+
+		
        //simply invokes static methods of the Menu class    	
     	AddressBook ab = new AddressBook();
 		ab.listAdd();
@@ -86,19 +100,32 @@ class AddressEntry {
 
 
 
-class AddressBook extends ArrayList<AddressEntry> {
-	
-	public AddressEntry createAddress (String firstName,String lastName,String street,String city, String state, String phone, int zip) {
-        return new AddressEntry(firstName, lastName, street, city, state, phone, zip); 
-        }
+class AddressBook  {
 
+HashMap<String,AddressEntry>map = new HashMap<String,AddressEntry>();
+AddressEntry a = new AddressEntry(null, null, null, null, null, null, 0);
     public void listAdd() {
-        add(createAddress("Jerry","Lee", "Ronson","Hayward","California", "1500-9999", 15779));
-        add(createAddress("Berry","Park", "Ronson","Hayward","California", "410-424-2222", 17579));
-        add(createAddress("Henrey","Jung", "Ronson","Hayward","California", "19999-9999", 13339));
-        add(createAddress("Rorry","Kim", "Ronson","Hayward","California", "1400-22222", 15559));
-        add(createAddress("Jenny","Lim", "Ronson","Hayward","California", "4444-2222", 19999));
-
+    	
+		try {
+			Scanner scanner = new Scanner(System.in);
+			String filename = scanner.next();
+			File file = new File(filename);
+			FileReader fileReader = new FileReader(file);
+			String cur = null;
+			
+			while() {
+				
+				(cur = fileReader.getEncoding()) 
+				a.setFirstName((String)cur);
+				
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+    	map.put(key, value)
     }
     public void list() {
     	String result = null;
@@ -122,7 +149,7 @@ class AddressBook extends ArrayList<AddressEntry> {
         }
     }
 	public AddressBook() {
-		super(5);
+	
 	}
 	
 }
