@@ -22,11 +22,11 @@ public class AddressBookApplication {
 		AddressBook ab = new AddressBook();
 		Display p = new Display();
 		char select = 'q';
-		while(select != 'f') {
-		Menu.call_menu();
+		while(select != 'f') {  
+		/*Menu.call_menu();
 		select  = scanner.next().toCharArray()[0];
 		if (select == 'f') break;
-		Menu.menu(select);
+		Menu.menu(select);*/
 		}
 	}
 }

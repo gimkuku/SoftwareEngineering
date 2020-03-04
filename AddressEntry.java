@@ -9,12 +9,12 @@
 public class AddressEntry {
 
 	private String firstName, lastName, street, city, state, phone, email ;
-	private int zip;
+	private String zip;
 
 	   /**
      * default Constructor
      */
-	public AddressEntry(String firstName,String lastName,String street,String city, String state, String phone,String email, int zip) {
+	public AddressEntry(String firstName,String lastName,String street,String city, String state, String phone,String email, String zip) {
 		setFirstName(firstName);
 		setLastName(lastName);
 		setCity(city);
@@ -98,14 +98,14 @@ public class AddressEntry {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public int getZip() {
+	public String getZip() {
 		return zip;
 	}
 	/**
     *
     * @param zip   zip
     */
-	public void setZip(int zip) {
+	public void setZip(String zip) {
 		this.zip = zip;
 	}
 	public String getEmail() {

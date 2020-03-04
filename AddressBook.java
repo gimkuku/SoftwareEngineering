@@ -28,8 +28,7 @@ public class AddressBook {
      */
 	
 	public static void init(String filename) throws IOException {
-		String firstName, lastName, street, city, state, phone, email;
-		int zip;
+		String firstName, lastName, street, city, state, phone, email, zip;
 		FileReader fr = null;
 		BufferedReader br = null;	
 		File file = new File(filename);
@@ -45,7 +44,7 @@ public class AddressBook {
 				street = br.readLine();
 				city = br.readLine();	             
 				state = br.readLine();
-				zip = Integer.parseInt(br.readLine());
+				zip = br.readLine();
 				phone = br.readLine();
 				email = br.readLine();
 
@@ -86,8 +85,7 @@ public class AddressBook {
 	     * @param email    email address
 	     */
 		
-		String firstName, lastName, street, city, state, phone, email;
-		int zip;
+		String firstName, lastName, street, city, state, phone, email, zip;
 		
 		firstName = Menu.prompt_FirstName();
 		lastName =Menu.prompt_LastName();
@@ -127,7 +125,7 @@ public class AddressBook {
 	 * @param flag to check the word 
 	 */
 	
-	public static void find(String startof_lastName) {
+	public static String[] find(String startof_lastName) {
 		int i =0;
 		boolean flag = true;
 		String[] list = new String[100];
@@ -146,6 +144,7 @@ public class AddressBook {
 			System.out.println("#"+(j+1));
 			System.out.println(map.get(list[j]).toString());
 		}}
+		return list;
 	} 
 	
 	public static void list() {

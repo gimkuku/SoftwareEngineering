@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 
 public class Display extends JFrame  implements ActionListener, TextListener {
@@ -10,10 +11,10 @@ public class Display extends JFrame  implements ActionListener, TextListener {
 	JButton newB = new JButton("New");
 	JButton removeB = new JButton("Remove");
 	AddressBook ab = new AddressBook();
-	AddressEntry entry = new AddressEntry(null, null, null, null, null, null, null, 0);
-
+	AddressEntry entry = new AddressEntry(null, null, null, null, null, null, null, null);
+	private DefaultTableModel tableModel;
 	String s = null;
-	
+
 Display(){
 	this.setSize(300,300);
 	this.add(menu,BorderLayout.NORTH);
@@ -26,30 +27,32 @@ Display(){
 		removeB.addActionListener(this);
 		this.add(p,BorderLayout.CENTER);
 		p.setSize(200,300);
+		p.add(tableModel);
 		this.setVisible(true);
 	}
 
 public void actionPerformed(ActionEvent e) {
 	// TODO Auto-generated method stub
-	if (e.getActionCommand() =="displayB") {
-		System.out.println("displayB");
-	AddressBook.list();
+	if (e.getActionCommand() =="Display") {
+	
+
 
 	}
-	else if (e.getActionCommand() == "newB") {
-		System.out.println("newB");
-	AddressBook.add();	
+	else if (e.getActionCommand() == "New") {
+		
+		SearchDisplay p = new SearchDisplay(ab);
 	}
-	else if (e.getActionCommand() == "removeB") {
-		System.out.println("removeB");
-	AddressBook.removeName(s);
+	else if (e.getActionCommand() == "Remove") {
+		
+
 	}
 }
 
 @Override
 public void textValueChanged(TextEvent e) {
 	// TODO Auto-generated method stub
-	
+
 }
 
 }
+ 

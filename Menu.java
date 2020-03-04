@@ -77,9 +77,9 @@ public class Menu {
 		System.out.print("State:");
 		return scanner.nextLine();
 	}
-	public static int prompt_Zip() {
+	public static String prompt_Zip() {
 		System.out.print("Zip:");
-		return Integer.parseInt(scanner.nextLine());
+		return scanner.nextLine();
 	}
 	public static String prompt_Phone() {
 		System.out.print("Phone:");
